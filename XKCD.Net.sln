@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XKCD.Net", "src\XKCD.Net.Api\XKCD.Net.csproj", "{2EC576A1-6F8F-41BC-A497-DA2A561628D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XKCD.Net.Test", "src\XKCD.Net.Test\XKCD.Net.Test.csproj", "{EE0F2165-B382-4230-BBCF-174CDE54387F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples", "src\Examples\Examples.csproj", "{45AE2BA7-F6C4-4DD4-A9D0-FA7FEA51C7BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2EC576A1-6F8F-41BC-A497-DA2A561628D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EC576A1-6F8F-41BC-A497-DA2A561628D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EC576A1-6F8F-41BC-A497-DA2A561628D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EC576A1-6F8F-41BC-A497-DA2A561628D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE0F2165-B382-4230-BBCF-174CDE54387F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE0F2165-B382-4230-BBCF-174CDE54387F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE0F2165-B382-4230-BBCF-174CDE54387F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE0F2165-B382-4230-BBCF-174CDE54387F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45AE2BA7-F6C4-4DD4-A9D0-FA7FEA51C7BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45AE2BA7-F6C4-4DD4-A9D0-FA7FEA51C7BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45AE2BA7-F6C4-4DD4-A9D0-FA7FEA51C7BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45AE2BA7-F6C4-4DD4-A9D0-FA7FEA51C7BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
