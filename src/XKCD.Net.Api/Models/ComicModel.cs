@@ -1,6 +1,6 @@
 namespace XKCD.Net.Models;
 
-public class Comic
+public class ComicModel
 {
     public string Month { get; set; } = String.Empty;
     public int Num { get; set; } = 0;
