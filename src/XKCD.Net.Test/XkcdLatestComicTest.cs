@@ -32,8 +32,8 @@ public class XkcdComicTest
     [Test]
     public void InvalidComic()
     {
-        Assert.Throws<FileNotFoundException>(() => new Comic(-84845));
-        Assert.Throws<FileNotFoundException>(() => new Comic(-2));
+        Comic comic = new(-2);
+        Assert.Throws<AggregateException>(() => Console.Write(comic.Link));
     }
 
     [Test]

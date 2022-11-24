@@ -4,9 +4,9 @@ using XKCD.Net.Models;
 
 namespace XKCD.Net.Services;
 
-public class GetComic
+public class ComicService
 {
-    public async Task<ComicModel> GetComicObject(int day)
+    public async Task<ComicModel> GetComic(int day)
     {
         using HttpClient client = new();
 
@@ -45,7 +45,7 @@ public class GetComic
 
     private int GetRandom()
     {
-        int latest = GetComicObject(0).Result.Num;
+        int latest = GetComic(0).Result.Num;
         Random random = new();
         return random.Next(0, latest);
     }

@@ -5,7 +5,7 @@ namespace XKCD.Net;
 
 public class Comic
 {
-    private readonly GetComic _comicService = new();
+    private readonly ComicService _comicService = new();
     private readonly int _index;
 
     public Comic(int index)
@@ -13,7 +13,7 @@ public class Comic
         _index = index;
     }
 
-    private ComicModel MyComic => _comicService.GetComicObject(_index).Result;
+    private ComicModel MyComic => _comicService.GetComic(_index).Result;
 
     public string Month => MyComic.Month;
     public int Num => MyComic.Num;
