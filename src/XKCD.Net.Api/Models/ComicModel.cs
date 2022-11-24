@@ -1,16 +1,29 @@
+using System.Text.Json.Serialization;
+
 namespace XKCD.Net.Models;
 
 public class ComicModel
 {
-    public string Month { get; set; } = String.Empty;
-    public int Num { get; set; } = 0;
-    public string Link { get; set; } = String.Empty;
-    public string Year { get; set; }= String.Empty;
-    public string News { get; set; } = String.Empty;
-    public string SafeTitle { get; set; } = String.Empty;
-    public string Transcript { get; set; } = String.Empty;
-    public string Alt { get; set; } = String.Empty;
-    public string Img { get; set; } = String.Empty;
-    public string Title { get; set; } = String.Empty;
-    public string Day { get; set; } = String.Empty;
+    [JsonPropertyName("month")]
+    public string Month { get; set; }
+    [JsonPropertyName("num")]
+    public int Num { get; set; }
+    [JsonPropertyName("link")]
+    public string Link { get; set; }
+    [JsonPropertyName("year")]
+    public string Year { get; set; }
+    [JsonPropertyName("news")]
+    public string News { get; set; }
+    [JsonPropertyName("safe_title")]
+    public string SafeTitle { get; set; }
+    [JsonPropertyName("transcript")]
+    public string Transcript { get; set; }
+    [JsonPropertyName("alt")]
+    public string Alt { get; set; }
+    [JsonPropertyName("img")]
+    public Uri Img { get; set; }
+    [JsonPropertyName("title")]
+    public string Title { get; set; }
+    [JsonPropertyName("day")]
+    public string Day { get; set; }
 }

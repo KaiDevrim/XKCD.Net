@@ -1,53 +1,52 @@
-namespace XKCD.Net.Services;
+using System.Text.Json;
 
-using Models;
-using Newtonsoft.Json;
+using XKCD.Net.Models;
+
+namespace XKCD.Net.Services;
 
 public class GetComic
 {
-    public ComicModel GetComicObject(int? day)
+    public async Task<ComicModel> GetComicObject(int day)
     {
-        using var client = new HttpClient();
-        string url = String.Empty;
-        if (day == 0)
-        {
-            url = "https://xkcd.com/info.0.json";
-        }
-        
-        else if (day == -1)
-        {
-             Random r = new Random();
-             int max = JsonConvert.DeserializeObject<ComicModel>(client.GetAsync("https://xkcd.com/info.0.json").Result.Content.ReadAsStringAsync().Result).Num;
-             int randomDay = r.Next(0, max);
-             url = $"https://xkcd.com/{randomDay}/info.0.json";
-        }
-        
-        else if (day >= 1)
-        {
-            url = $"https://xkcd.com/{day}/info.0.json";
-        }
+        using HttpClient client = new();
 
-        else
-        {
-            throw new FileNotFoundException();
-        }
+        HttpResponseMessage response = await client.GetAsync(GetUri(day));
 
-        HttpResponseMessage response = client.GetAsync(url).Result;
-        if (response.IsSuccessStatusCode)
+        try
         {
-            try
-            {
-                JsonConvert.DeserializeObject<ComicModel>(response.Content.ReadAsStringAsync().Result);
-            }
-            catch (Exception e)
-            {
-                throw new JsonSerializationException(e.ToString());
-            }
+            response.EnsureSuccessStatusCode();
         }
-        else
+        catch
         {
             throw new HttpRequestException();
         }
-        return JsonConvert.DeserializeObject<ComicModel>(response.Content.ReadAsStringAsync().Result) ?? new ComicModel();
+
+        var options = new JsonSerializerOptions
+        {
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+        };
+        
+        Stream stream = await response.Content.ReadAsStreamAsync();
+        ComicModel comic = await JsonSerializer.DeserializeAsync<ComicModel>(stream, options);
+
+        return comic;
+    }
+
+    private Uri GetUri(int day)
+    {
+        return day switch
+        {
+            0 => new Uri("https://xkcd.com/info.0.json"),
+            -1 => new Uri($"https://xkcd.com/{GetRandom()}/info.0.json"),
+            >= 1 => new Uri($"https://xkcd.com/{day}/info.0.json"),
+            < 0 => throw new FileNotFoundException(),
+        };
+    }
+
+    private int GetRandom()
+    {
+        int latest = GetComicObject(0).Result.Num;
+        Random random = new();
+        return random.Next(0, latest);
     }
 }
