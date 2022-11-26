@@ -34,6 +34,10 @@ public class ComicService
 
     private Uri GetUri(int day)
     {
+        if (day == 404)
+        {
+            throw new FileNotFoundException();
+        }
         return day switch
         {
             0 => new Uri("https://xkcd.com/info.0.json"),

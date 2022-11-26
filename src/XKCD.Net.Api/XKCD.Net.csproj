@@ -3,8 +3,19 @@
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Nullable>disable</Nullable>
         <IsPackable>true</IsPackable>
+        <PackageId>KaiDevrim.XkcdApi</PackageId>
+        <Version>1.0.0</Version>
+        <Authors>Kai Devrim</Authors>
+        <Company>Devrim Tech</Company>
+        <Description>C# API Wrapper for XKCD</Description>
+        <Copyright>M.I.T</Copyright>
+        <PackageProjectUrl>https://github.com/KaiDevrim/XKCD.Net</PackageProjectUrl>
+        <RepositoryType>Git</RepositoryType>
+        <RepositoryUrl>https://github.com/KaiDevrim/XKCD.Net</RepositoryUrl>
+        <PackageTags>API,XKCD,Library,Comics,Comic,Example</PackageTags>
     </PropertyGroup>
 
 </Project>
