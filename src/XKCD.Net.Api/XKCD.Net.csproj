@@ -11,7 +11,8 @@
         <Authors>Kai Devrim</Authors>
         <Company>Devrim Tech</Company>
         <Description>C# API Wrapper for XKCD</Description>
-        <Copyright>M.I.T</Copyright>
+        <Copyright>KaiDevrim (MIT License)</Copyright>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/KaiDevrim/XKCD.Net</PackageProjectUrl>
         <RepositoryType>Git</RepositoryType>
         <RepositoryUrl>https://github.com/KaiDevrim/XKCD.Net</RepositoryUrl>
