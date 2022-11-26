@@ -17,6 +17,10 @@
         <RepositoryType>Git</RepositoryType>
         <RepositoryUrl>https://github.com/KaiDevrim/XKCD.Net</RepositoryUrl>
         <PackageTags>API,XKCD,Library,Comics,Comic,Example</PackageTags>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
+    <ItemGroup>
+        <None Include="../../README.md" Pack="true" PackagePath="/"/>
+    </ItemGroup>
 
 </Project>
