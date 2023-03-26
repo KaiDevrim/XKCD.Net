@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./banner.png" />
+</p>
+
 # XKCD.Net
 
 XKCD.Net is a C# library for getting Comics from the famous web-series [XKCD](https://xkcd.com)!
