@@ -44,8 +44,8 @@ comic.News (string)
 comic.SafeTitle (string)
 comic.Transcript (string)
 comic.Alt (string)
-comic.Title (Uri)
-comic.Img (string)
+comic.Title (string)
+comic.Img (Uri)
 comic.Day (string)
 ```
 
